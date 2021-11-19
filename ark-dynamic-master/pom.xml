@@ -33,19 +33,23 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>runtime-sofa-boot-plugin</artifactId>
+            <groupId>io.sofastack.guides</groupId>
+            <artifactId>ark-dynamic-plugin</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>sofa-ark-container</artifactId>
-            <version>1.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>healthcheck-sofa-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-loader</artifactId>
         </dependency>
 
     </dependencies>
@@ -55,7 +59,7 @@
             <plugin>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>sofa-ark-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${sofa.ark.version}</version>
                 <executions>
                     <execution>
                         <id>default-cli</id>
@@ -68,6 +72,7 @@
                     <outputDirectory>../target</outputDirectory>
                     <baseDir>../</baseDir>
                     <webContextPath>/master</webContextPath>
+                    <arkClassifier>ark-executable</arkClassifier>
                 </configuration>
             </plugin>
         </plugins>

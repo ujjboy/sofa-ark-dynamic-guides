@@ -19,7 +19,13 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>logback-classic</artifactId>
+                    <groupId>ch.qos.logback</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -33,8 +39,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>runtime-sofa-boot-plugin</artifactId>
+            <groupId>io.sofastack.guides</groupId>
+            <artifactId>ark-dynamic-plugin</artifactId>
         </dependency>
     </dependencies>
 
@@ -43,7 +49,7 @@
             <plugin>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>sofa-ark-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${sofa.ark.version}</version>
                 <executions>
                     <execution>
                         <!--goal executed to generate executable-ark-jar -->
